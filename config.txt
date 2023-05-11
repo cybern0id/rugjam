@@ -1,0 +1,34 @@
+# do not modify this file as it will be overwritten on upgrade.
+# create and/or modify usercfg.txt instead.
+# https://www.raspberrypi.com/documentation/computers/config_txt.html
+[pi0]
+kernel=boot/vmlinuz-rpi
+initramfs boot/initramfs-rpi
+core_freq=250
+[pi0w]
+kernel=boot/vmlinuz-rpi
+initramfs boot/initramfs-rpi
+core_freq=250
+[pi1]
+kernel=boot/vmlinuz-rpi
+initramfs boot/initramfs-rpi
+[pi02]
+kernel=boot/vmlinuz-rpi2
+initramfs boot/initramfs-rpi2
+core_freq=250
+[pi2]
+kernel=boot/vmlinuz-rpi2
+initramfs boot/initramfs-rpi2
+[pi3]
+kernel=boot/vmlinuz-rpi2
+initramfs boot/initramfs-rpi2
+[pi3+]
+kernel=boot/vmlinuz-rpi2
+initramfs boot/initramfs-rpi2
+[all]
+include usercfg.txt
+dtoverlay=disable-bt
+dtoverlay=disable-wifi
+dtoverlay=dwc2
+enable_uart=1
+#enable_jtag_gpio=1
