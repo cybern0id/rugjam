@@ -23,12 +23,12 @@ or mega65_ftp, can use to interact with the Mega65. Serial communication sent fr
 [openFPGAloader](https://github.com/trabucayre/openFPGALoader) etc. The RPi gadget presents a USB to ethernet bridge to facilitate this, using your desktop or laptop computer's internet connected network hardware as a
 route to the internet (internet sharing must be turned on).
 
-These scripts are designed to run on Alpine Linux armhf edition for Raspberry Pi. Alpine was chosen as it is very lightweight, easy to configure and doesn't use systemd (and so is not overly complicated IMHO).
+These scripts are designed to run on [Alpine Linux armhf edition for Raspberry Pi](https://www.alpinelinux.org/downloads/). Alpine was chosen as it is very lightweight, easy to configure and doesn't use systemd (and so is not overly complicated IMHO).
 
 Still to do:
 - Add photos, wiring diagrams.
 - Document GPIO pins used
-- Add a programmer for Mega65's Max-10 FPGA
+- Add a programmer for Mega65's Max-10 FPGA (current idea will require deboostrap or similar to deploy and run a chroot glibc based armhf Debian distro as Alpine's musl libc won't run the app I have in mind) 
 - fine tuning and optimisation of scripts
 - attempt Pi usbboot to remove requirement for uSD card in the Pi (unfortunately, already tested usbboot and it doesn't work for Pi Zero on MacOS Ventura - other OS or Pi versions may do so - initial testing with Pi Zero 2 (02) shows promise on MacOS)
 - make changes to m65 mega65 tool so that it recognises Pi gadget's Xilinx Virtual Cable Server.
