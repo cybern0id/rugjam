@@ -32,3 +32,23 @@ Still to do:
 - fine tuning and optimisation of scripts
 - attempt Pi usbboot to remove requirement for uSD card in the Pi (unfortunately, already tested usbboot and it doesn't work for Pi Zero on MacOS Ventura - other OS or Pi versions may do so - initial testing with Pi Zero 2 (02) shows promise on MacOS)
 - make changes to m65 mega65 tool so that it recognises Pi gadget's Xilinx Virtual Cable Server.
+
+Requirements:
+- Raspberry Pi Zero, Zero W, Zero 2, Zero 2W (possibly Pi 3 but untested to date)
+- uSD card >8GB
+- Soldered GPIO pin header on the Pi
+- Dupont style female to female jumper wires (at least 8 of them)
+- A brave heart and strong stomach.
+- Patience
+- A USB to USB micro cable to connect between desktop/notebook computer and the Pi
+
+Directions:
+- Prepare uSD card
+- Run scripts to deploy Alpine Linux, config files and deploy scripts
+- Correctly connect jumper wires between Pi and Mega65. Check wiring thrice.
+- Set up internet connection sharing for your primary network device on your desktop/notebook computer
+- Insert uSD to Pi; Boot Pi using USB cable connected to USB "data" micro port on Pi.
+- (May need to re-check and disable/re-enable internet connection sharing at this point for Windows)
+- Wait a while
+- Check Pi gadget serial UART/ACM modem device is detected by your desktop/notebook.
+- Try connecting to Pi via SSH or sending m65 command
