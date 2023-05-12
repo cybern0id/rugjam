@@ -1,8 +1,7 @@
 # rugjam
 (R)aspberry Pi (U)SB (G)adget (J)TAG for (A) (M)ega65
 
-My initial objective was to find an alternative to the official TE0790-03(L) XMOD FTDI JTAG adapter available from Trenz. I wanted to use a Raspberry Pi Zero as a programmer and interface for the Xilinx Artix-7 FPGA on the [Mega65 8-bit computer](https://github.com/MEGA65/).
-I soon realised I could turn the Raspberry Pi into a USB attached gadget, rather than use it as stand alone general purpose computer.
+My initial objective was to find an alternative to the official TE0790-03(L) XMOD FTDI JTAG adapter available from Trenz. I wanted to use a Raspberry Pi Zero as a programmer and interface for the Xilinx Artix-7 FPGA on the [Mega65 8-bit computer](https://github.com/MEGA65/) but soon realised that the Pi could be turned into a USB attached gadget device, rather than just a stand alone general purpose computer.
 
 This collection of scripts and config files are presented here in the hope they can assist in easily setting up a Raspberry Pi as a multi-function USB gadget device that can be connected to your desktop or notebook computer.
 
@@ -19,9 +18,7 @@ or mega65_ftp, can use to interact with the Mega65. Serial communication sent fr
   
   OR
   
-  FPGA programming can be done directly using tools local to the device - this requires logging in via SSH to the Raspberry Pi and using [xc3sprog](https://github.com/matrix-io/xc3sprog), [openocd](https://github.com/openocd-org/openocd),
-[openFPGAloader](https://github.com/trabucayre/openFPGALoader) etc. The RPi gadget presents a USB to ethernet bridge to facilitate this, using your desktop or laptop computer's internet connected network hardware as a
-route to the internet (internet sharing must be turned on).
+  FPGA programming can be done directly using tools local to the device - this requires logging in via SSH to the Raspberry Pi and using [xc3sprog](https://github.com/matrix-io/xc3sprog), [openocd](https://github.com/openocd-org/openocd), [openFPGAloader](https://github.com/trabucayre/openFPGALoader) etc. The RPi gadget presents a USB to ethernet bridge to facilitate this, using your desktop or laptop computer's internet connected network hardware as a route to the internet (internet sharing must be turned on).
 
 These scripts are designed to run on [Alpine Linux armhf edition for Raspberry Pi](https://www.alpinelinux.org/downloads/). Alpine was chosen as it is very lightweight, easy to configure and doesn't use systemd (and so is not overly complicated IMHO).
 
@@ -51,13 +48,13 @@ Directions:
     
     Format uSD with two FAT32 partitions. Ensure second partition is >7GB. First partition can be >512MB.
     
-    Decompress alpine linux download to first partition of uSD card.
+    Decompress Alpine Linux download to first partition of uSD card.
     
     Download headless overlay for Alpine Linux, decompress, make relavent changes, recompress.
     
     Copy this adjusted headless overlay file to first partition of uSD card.
     
-    Copy interfaces, cmdline.txt, config.txt, rpi-libcomposite.sh and unattended.sh files from this repo to first partition of uSD card.
+    Copy interfaces, cmdline.txt, config.txt, rpi-libcomposite.sh, set-win-dns.sh and unattended.sh files from this repo to first partition of uSD card.
     
     Create two raw disk image files of approximately 3GB in size each, on second partition of uSD card, one named 'persist.img' and the other named 'userfiles.img'.
     ``fallocate`` on Linux or ``mkfile`` on Macos can achieve this. ``fsutil file createnew`` for Windows should do the same.
