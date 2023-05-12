@@ -4,6 +4,7 @@ iface lo inet loopback
 
 auto usb0
 iface usb0 inet dhcp
+	post-up /media/mmcblk0p1/set-win-dns.sh
 
 auto usb1
 iface usb1 inet dhcp

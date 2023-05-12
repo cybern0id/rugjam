@@ -73,7 +73,7 @@ if [[ -e $P2APKS ]]; then
 
 	## Install required packages, keeping them in /media/mmcblk0p2/apks cache for installing at next boot
 	apk update
-	apk add socat git make cmake pkgconf libtool libusb libusb-dev gcc g++ raspberrypi raspberrypi-libs raspberrypi-dev wiringpi-dev libftdi1-dev libc6-compat libusb-compat libusb-compat-dev nano tmux screen htop dosfstools
+	apk add socat git make cmake pkgconf libtool libusb libusb-dev gcc g++ raspberrypi raspberrypi-libs raspberrypi-dev wiringpi-dev libftdi1-dev libc6-compat libusb-compat libusb-compat-dev nano tmux screen htop dosfstools 7zip curl
 
 	## Copy Raspberry Pi support files and libraries to /usr/local (fixes bcm_ header files not found etc).
 	cp -r /opt/vc/lib/* /usr/local/lib/; mkdir -p /usr/local/include; cp -r /opt/vc/include/* /usr/local/include/; cp -r /opt/vc/bin/* /usr/local/bin/
